@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCustomLibraryAddCell" rowHeight="97" id="KGk-i7-Jjw" customClass="LibraryAddTableViewCell" customModule="ListenToMusicFiles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LibraryCellBackground" translatesAutoresizingMaskIntoConstraints="NO" id="oLQ-b2-WPn">
+                        <rect key="frame" x="23.666666666666657" y="19.666666666666671" width="368" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="58" id="Ejz-e1-NYY"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSA-bN-JyW">
+                        <rect key="frame" x="39" y="34" width="292" height="29"/>
+                        <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="25"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9C-DV-9BC">
+                        <rect key="frame" x="339" y="28.666666666666671" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="E9C-DV-9BC" secondAttribute="height" multiplier="1:1" id="rrs-MN-kZQ"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="">
+                            <backgroundConfiguration key="background" image="LibraryCellAddButton"/>
+                        </buttonConfiguration>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oLQ-b2-WPn" firstAttribute="leading" relation="lessThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23.5" id="GDu-wz-qyB"/>
+                    <constraint firstItem="lSA-bN-JyW" firstAttribute="width" secondItem="oLQ-b2-WPn" secondAttribute="height" multiplier="146:29" id="HCe-TQ-2pI"/>
+                    <constraint firstItem="oLQ-b2-WPn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="U2x-8O-fSG"/>
+                    <constraint firstItem="lSA-bN-JyW" firstAttribute="centerY" secondItem="oLQ-b2-WPn" secondAttribute="centerY" id="cXl-BB-k2m"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="oLQ-b2-WPn" secondAttribute="trailing" constant="23.5" id="ckB-7Y-v8Y"/>
+                    <constraint firstItem="oLQ-b2-WPn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hrf-GJ-RaX"/>
+                    <constraint firstItem="lSA-bN-JyW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="39" id="iAC-cW-eug"/>
+                    <constraint firstItem="E9C-DV-9BC" firstAttribute="width" secondItem="oLQ-b2-WPn" secondAttribute="height" multiplier="20:29" id="jkb-zf-E6L"/>
+                    <constraint firstItem="E9C-DV-9BC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mvM-87-vMx"/>
+                    <constraint firstItem="E9C-DV-9BC" firstAttribute="leading" secondItem="oLQ-b2-WPn" secondAttribute="trailing" constant="-52.666666666666629" id="qVM-dI-ADz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="132.06106870229007" y="41.197183098591552"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="LibraryCellAddButton" width="40" height="40"/>
+        <image name="LibraryCellBackground" width="368" height="58"/>
+    </resources>
+</document>
