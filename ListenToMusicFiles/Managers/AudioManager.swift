@@ -86,6 +86,7 @@ class AudioManager : Manager, AVAudioPlayerDelegate
                 self.audioPlayer.play()
                 self.updateMetaData()
                 self.audioPlayer.delegate = self
+                self.audioPlayer.setVolume(1, fadeDuration: 0)
                 if(self.repeatModeEnabled)
                 {
                     self.audioPlayer.numberOfLoops = -1;
