@@ -93,7 +93,7 @@ class AudioPlayerViewController: UIViewController, NeedsMusicInfoDelegate
         AppDelegate.sharedManagers()?.audioManager.updateMetaData()
         let progress : Float = Float(AppDelegate.sharedManagers()?.audioManager.getAudioPlayerTime() ?? 0) + 0.7;
         self.trackSlider.setValue(progress, animated: false)
-        self.currentTimeLabel.text = String(format: "%d:%.2d", Int(progress / 60), (Int(progress) % 60))
+        self.currentTimeLabel.text = String(format: "%d:%.2d", Int(progress) / 60, (Int(progress) % 60))
     }
     
     func initializeAudioPlayerScreenFromSongDuration(duration: TimeInterval)
@@ -103,7 +103,8 @@ class AudioPlayerViewController: UIViewController, NeedsMusicInfoDelegate
         self.trackSlider.maximumValue = Float(duration);
         self.trackSlider.setValue(0, animated: false)
         self.currentTimeLabel.text = "0:00"
-        self.totalTimeLabel.text = String(format: "%.f:%.2d", (duration / 60), (Int(duration) % 60))
+        print(Int(duration) / 60)
+        self.totalTimeLabel.text = String(format: "%d:%.2d", Int(duration) / 60, (Int(duration) % 60))
         trackTimer =  Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTimerLabels), userInfo: nil, repeats: true)
     }
     
