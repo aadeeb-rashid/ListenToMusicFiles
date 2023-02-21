@@ -217,6 +217,11 @@ class AudioManager : Manager, AVAudioPlayerDelegate
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
     {
+        self.playNextSong()
+    }
+    
+    private func playNextSong()
+    {
         if(!repeatModeEnabled)
         {
             if(shuffleModeEnabled)
@@ -225,14 +230,10 @@ class AudioManager : Manager, AVAudioPlayerDelegate
             }
             else
             {
-                self.playNextSong()
+                self.playAudioFromPosition(position: (self.position + 1) % (AppDelegate.sharedManagers()?.userManager.getLibrary().count ?? 1))
             }
         }
-    }
-    
-    private func playNextSong()
-    {
-        self.playAudioFromPosition(position: (self.position + 1) % (AppDelegate.sharedManagers()?.userManager.getLibrary().count ?? 1))
+        
     }
     
     private func playNextSongFromShuffleQueue()
@@ -294,7 +295,7 @@ class AudioManager : Manager, AVAudioPlayerDelegate
     func handleRepeatButtonPressed()
     {
         repeatModeEnabled = !repeatModeEnabled
-        self.audioPlayer.numberOfLoops = repeatModeEnabled ? -1 : 1
+        self.audioPlayer.numberOfLoops = repeatModeEnabled ? -1 : 0
         delegate?.changeRepeatButton(image: UIImage(named: repeatModeEnabled ? "MusicPlayerRepeatOn" : "MusicPlayerRepeatOff") ?? UIImage())
     }
     
