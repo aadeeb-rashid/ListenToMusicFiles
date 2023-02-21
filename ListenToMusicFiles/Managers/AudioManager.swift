@@ -233,6 +233,10 @@ class AudioManager : Manager, AVAudioPlayerDelegate
                 self.playAudioFromPosition(position: (self.position + 1) % (AppDelegate.sharedManagers()?.userManager.getLibrary().count ?? 1))
             }
         }
+        else
+        {
+            self.playAudioFromPosition(position: (self.position) % (AppDelegate.sharedManagers()?.userManager.getLibrary().count ?? 1))
+        }
         
     }
     
