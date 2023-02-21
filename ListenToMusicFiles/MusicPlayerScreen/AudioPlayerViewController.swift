@@ -103,7 +103,6 @@ class AudioPlayerViewController: UIViewController, NeedsMusicInfoDelegate
         self.trackSlider.maximumValue = Float(duration);
         self.trackSlider.setValue(0, animated: false)
         self.currentTimeLabel.text = "0:00"
-        print(Int(duration) / 60)
         self.totalTimeLabel.text = String(format: "%d:%.2d", Int(duration) / 60, (Int(duration) % 60))
         trackTimer =  Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateTimerLabels), userInfo: nil, repeats: true)
     }
