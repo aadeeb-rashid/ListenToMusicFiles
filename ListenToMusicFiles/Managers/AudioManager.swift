@@ -293,6 +293,11 @@ class AudioManager : Manager, AVAudioPlayerDelegate
     
     func handleSeekToTime(time : TimeInterval)
     {
+        if(time >= self.audioPlayer.duration)
+        {
+            self.audioPlayer.currentTime = self.audioPlayer.duration - 1;
+            return
+        }
         self.audioPlayer.currentTime = time
         self.updateMetaData()
     }
