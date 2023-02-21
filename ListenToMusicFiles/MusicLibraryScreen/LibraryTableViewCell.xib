@@ -29,7 +29,7 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9C-DV-9BC">
-                        <rect key="frame" x="339" y="26.666666666666671" width="44" height="44"/>
+                        <rect key="frame" x="337.66666666666669" y="26.666666666666671" width="44" height="44"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="E9C-DV-9BC" secondAttribute="height" multiplier="1:1" id="rrs-MN-kZQ"/>
                         </constraints>
@@ -37,6 +37,9 @@
                         <buttonConfiguration key="configuration" style="plain" title="">
                             <backgroundConfiguration key="background" image="LibraryCellPlayButton"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="didPressPlayButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HTM-EI-Pbo"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVu-fZ-J4R">
                         <rect key="frame" x="39" y="27" width="32" height="43"/>
@@ -73,7 +76,7 @@
                     <constraint firstItem="lSA-bN-JyW" firstAttribute="centerY" secondItem="oLQ-b2-WPn" secondAttribute="centerY" id="cXl-BB-k2m"/>
                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="oLQ-b2-WPn" secondAttribute="trailing" constant="23.5" id="ckB-7Y-v8Y"/>
                     <constraint firstItem="oLQ-b2-WPn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hrf-GJ-RaX"/>
-                    <constraint firstItem="E9C-DV-9BC" firstAttribute="leading" secondItem="oLQ-b2-WPn" secondAttribute="trailing" constant="-52.666666666666629" id="qVM-dI-ADz"/>
+                    <constraint firstItem="E9C-DV-9BC" firstAttribute="trailing" secondItem="oLQ-b2-WPn" secondAttribute="trailing" constant="-10" id="qVM-dI-ADz"/>
                     <constraint firstItem="eVu-fZ-J4R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="39" id="tvP-VB-WvG"/>
                 </constraints>
             </tableViewCellContentView>

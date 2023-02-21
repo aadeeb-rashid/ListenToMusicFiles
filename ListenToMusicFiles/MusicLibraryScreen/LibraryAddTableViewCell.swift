@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol AddSongButtonDelegate : UIViewController
+{
+    func addSongTapped()
+}
+
 class LibraryAddTableViewCell: UITableViewCell
 {
     @IBOutlet weak var label: UILabel!
+    
+    var delegate : AddSongButtonDelegate? = nil
     
     static let identifier = "myCustomLibraryAddCell"
     static func nib() -> UINib
@@ -26,5 +33,15 @@ class LibraryAddTableViewCell: UITableViewCell
     override func setSelected(_ selected: Bool, animated: Bool)
     {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func setDelegate(viewController : AddSongButtonDelegate)
+    {
+        delegate = viewController
+    }
+
+    @IBAction func addSongButtonTapped(_ sender: UIButton)
+    {
+        delegate?.addSongTapped()
     }
 }

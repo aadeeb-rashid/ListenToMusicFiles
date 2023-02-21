@@ -9,7 +9,7 @@ import UIKit
 import UniformTypeIdentifiers
 
 
-class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIDocumentPickerDelegate, NeedsDeviceFileInfoDelegate
+class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIDocumentPickerDelegate, NeedsDeviceFileInfoDelegate, AddSongButtonDelegate, SongButtonDelegate
 {
     
     @IBOutlet weak var libraryTable: UITableView!
@@ -60,19 +60,20 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
             return getLibraryAddCellForIndexPath(indexPath: indexPath)
         }
         return getLibraryTableViewCellForIndexPath(indexPath: indexPath)
-        
     }
     
     private func getLibraryAddCellForIndexPath(indexPath: IndexPath) -> LibraryAddTableViewCell
     {
         let cell = libraryTable.dequeueReusableCell(withIdentifier: LibraryAddTableViewCell.identifier, for: indexPath) as! LibraryAddTableViewCell
+        cell.setDelegate(viewController: self)
         return cell
     }
     
     private func getLibraryTableViewCellForIndexPath(indexPath: IndexPath) -> LibraryTableViewCell
     {
         let cell = libraryTable.dequeueReusableCell(withIdentifier: LibraryTableViewCell.identifier, for: indexPath) as! LibraryTableViewCell
-        cell.configureLibraryCellFromFile(newFile: AppDelegate.sharedManagers()?.userManager.getLibrary()[indexPath.row - 1] ?? LocalFile())
+        cell.initLibraryCell(newFile: AppDelegate.sharedManagers()?.userManager.getLibrary()[indexPath.row - 1] ?? LocalFile(), position: indexPath.row - 1)
+        cell.setDelegate(viewController: self)
         return cell
     }
     
@@ -84,11 +85,16 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.addSongTapped()
             return
         }
-        self.performSegue(withIdentifier: "libraryToPlayerSegue", sender: self)
-        AppDelegate.sharedManagers()?.audioManager.playAudioFromPosition(position: indexPath.row - 1)
+        self.tappedCellAtPosition(position: indexPath.row - 1)
     }
     
-    private func addSongTapped()
+    func tappedCellAtPosition(position : Int)
+    {
+        self.performSegue(withIdentifier: "libraryToPlayerSegue", sender: self)
+        AppDelegate.sharedManagers()?.audioManager.playAudioFromPosition(position: position)
+    }
+    
+    func addSongTapped()
     {
         let documentPicker = self.getFileChooseView()
         self.present(documentPicker, animated: true, completion: nil)

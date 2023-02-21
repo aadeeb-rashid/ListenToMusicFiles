@@ -55,6 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         AppDelegate.sharedManagers()?.audioManager.updateMetaData()
     }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask
+    {
+        return UIInterfaceOrientationMask.portrait
+    }
 
     // MARK: - Core Data stack
 

@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9C-DV-9BC">
-                        <rect key="frame" x="339" y="28.666666666666671" width="40" height="40"/>
+                        <rect key="frame" x="331.66666666666669" y="28.666666666666671" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="E9C-DV-9BC" secondAttribute="height" multiplier="1:1" id="rrs-MN-kZQ"/>
                         </constraints>
@@ -43,6 +43,9 @@
                         <buttonConfiguration key="configuration" style="plain" title="">
                             <backgroundConfiguration key="background" image="LibraryCellAddButton"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="addSongButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hgq-oC-Ld7"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -55,7 +58,7 @@
                     <constraint firstItem="lSA-bN-JyW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="39" id="iAC-cW-eug"/>
                     <constraint firstItem="E9C-DV-9BC" firstAttribute="width" secondItem="oLQ-b2-WPn" secondAttribute="height" multiplier="20:29" id="jkb-zf-E6L"/>
                     <constraint firstItem="E9C-DV-9BC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mvM-87-vMx"/>
-                    <constraint firstItem="E9C-DV-9BC" firstAttribute="leading" secondItem="oLQ-b2-WPn" secondAttribute="trailing" constant="-52.666666666666629" id="qVM-dI-ADz"/>
+                    <constraint firstItem="E9C-DV-9BC" firstAttribute="trailing" secondItem="oLQ-b2-WPn" secondAttribute="trailing" constant="-20" id="qVM-dI-ADz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
