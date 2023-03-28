@@ -16,13 +16,14 @@ import MediaPlayer
     func changePlayPauseButton(image: UIImage)
     func changeRepeatButton(image: UIImage)
     func changeShuffleButton(image: UIImage)
+    func unwind()
     @objc func updateTimerLabels(_ timer : Timer)
 }
 
 
 class AudioManager : Manager, AVAudioPlayerDelegate
 {
-    private var audioPlayer: AVAudioPlayer!
+    private var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     private var position: Int = 0
     private var shuffleModeEnabled : Bool = false
     private var shuffleQueue : [Int]?
@@ -98,7 +99,9 @@ class AudioManager : Manager, AVAudioPlayerDelegate
             }
             catch _
             {
+                self.delegate?.unwind()
                 AppDelegate.sharedManagers()?.errorManager.handleError(error: MusicPlayerError.playerMalfunctioned)
+                
             }
         }
     }

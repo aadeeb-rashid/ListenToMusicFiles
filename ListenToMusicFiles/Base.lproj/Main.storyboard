@@ -89,7 +89,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="h4T-MY-z4q" kind="unwind" unwindAction="unwindToLibrary:" id="lgm-pD-d2f"/>
+                                    <action selector="didPressBackButton:" destination="l8J-Fj-xoo" eventType="touchUpInside" id="gFw-Zi-iTI"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MusicPlayerSegmentBackground" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-hy-JAH">
@@ -254,6 +254,7 @@
                         <outlet property="titleLabel" destination="oPa-Wh-fiY" id="BTn-KJ-Irj"/>
                         <outlet property="totalTimeLabel" destination="cpt-ED-Kgq" id="QzU-6P-0KX"/>
                         <outlet property="trackSlider" destination="grj-g7-w3w" id="XOo-WW-3Sb"/>
+                        <segue destination="h4T-MY-z4q" kind="unwind" identifier="unwindToLibrary" unwindAction="unwindToLibrary:" id="ens-Ok-mlJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkG-vX-0xM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

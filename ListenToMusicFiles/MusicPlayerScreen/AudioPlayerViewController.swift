@@ -57,6 +57,12 @@ class AudioPlayerViewController: UIViewController, NeedsMusicInfoDelegate
         self.shuffleButton.setBackgroundImage(UIImage(named: "MusicPlayerShuffleOn"), for: .normal)
     }
     
+    @IBAction func didPressBackButton(_ sender: UIButton)
+    {
+        self.unwind()
+    }
+    
+    
     @IBAction func didPressRewindButton(_ sender: UIButton)
     {
         AppDelegate.sharedManagers()?.audioManager.handleRewindButtonPressed()
@@ -127,10 +133,17 @@ class AudioPlayerViewController: UIViewController, NeedsMusicInfoDelegate
         self.shuffleButton.setBackgroundImage(image, for: .normal)
     }
     
+    func unwind()
+    {
+        self.performSegue(withIdentifier: "unwindToLibrary", sender: self)
+    }
+    
     override func viewWillDisappear(_ animated: Bool)
     {
         AppDelegate.sharedManagers()?.audioManager.stopPlaying()
     }
+    
+    
     
 
 }
